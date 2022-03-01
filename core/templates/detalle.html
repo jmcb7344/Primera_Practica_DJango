@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block title %}Detalle de Persona{% endblock title %}
+
+{% block contenedor %}
+<div class="contenedor">
+    <h3>Persona: {{ persona.nombre }} {{ persona.apellido }}</h3>
+    <h3>Genero: {{ persona.genero }}</h3>
+    <h3>DNI: {{ persona.dni }}</h3>
+    <h3>Edad: {{ persona.edad }}</h3>
+    <h3>Proceso: {{ persona.puesto.area }}</h3>
+    <h3>Puesto: {{ persona.puesto.puesto }}</h3>
+    <h3>Activo en planta: {{ persona.activo }}</h3>
+</div>
+<a class="btn btn-outline-primary" href="{% url 'fun:home' %}">Volver</a>
+{% endblock contenedor %}

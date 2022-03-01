@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+
+{% block title %}{{titulo}}{% endblock title %}
+
+{% block contenedor %}
+<a class="btn btn-outline-primary" href="{% url 'fun:agregar' %}">Agregar Persona</a>
+<a class="btn btn-outline-primary" href="{% url 'fun:agregar_puesto' %}">Agregar Puesto</a>
+<a class="btn btn-outline-primary" href="{% url 'fun:puesto' %}">Puestos Laborales</a>
+<table class="table table-hover">
+    <thead>
+        <tr class="table-dark">
+            <th>Id</th>
+            <th>Area</th>
+            <th>Puesto</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for pers in puesto %}
+        <tr>
+            <td>{{ pers.id }}</td>
+            <td>{{ pers.area }}</td>
+            <td>{{ pers.puesto }}</td>
+            <td><a class="btn btn-outline-primary" href="{% url 'fun:detalle_Puesto' pers.id %}">detalle</a></td>
+            <td><a class="btn btn-outline-primary" href="{% url 'fun:editar_puesto' pers.id %}">Editar</a></td>
+            <td><a class="btn btn-outline-primary" href="{% url 'fun:eliminar_puesto' pers.id %}">Eliminar</a></td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+<div class="contenedor">
+    <ul class="list-group">
+        <li class="list-group-item d-flex justify-content-between align-items-center">
+            <h4>Total de Puesto registrados:</h4>
+            <span class="badge bg-primary rounded-pill">{{ contar }}</span>
+        </li>
+    </ul>
+</div>
+<a class="btn btn-outline-primary me-2" href="{% url 'fun:home' %}">Volver</a>
+{% endblock contenedor %}
