@@ -3,7 +3,7 @@
 {% block title %}Detalle de Persona{% endblock title %}
 
 {% block contenedor %}
-<div class="contenedor">
+<div class="contenedor d-grid gap-2">
     <h3>Persona: {{ persona.nombre }} {{ persona.apellido }}</h3>
     <h3>Genero: {{ persona.genero }}</h3>
     <h3>DNI: {{ persona.dni }}</h3>
@@ -11,6 +11,7 @@
     <h3>Proceso: {{ persona.puesto.area }}</h3>
     <h3>Puesto: {{ persona.puesto.puesto }}</h3>
     <h3>Activo en planta: {{ persona.activo }}</h3>
+    <td><a class="btn btn-lg btn-primary" href="{% url 'fun:editar' persona.id %}">Editar</a></td>
 </div>
 <a class="btn btn-outline-primary" href="{% url 'fun:home' %}">Volver</a>
 {% endblock contenedor %}
