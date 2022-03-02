@@ -3,11 +3,11 @@
 {% block title %}Detalle de Persona{% endblock title %}
 
 {% block contenedor %}
-<div class="contenedor">
+<div class="contenedor d-grid gap-2">
     <h3>Area: {{ pue.area }}</h3>
     <h3>Puesto: {{ pue.puesto }}</h3>
     <h3>Descripcion: <br> {{ pue.descripcion }}</h3>
-    
+    <a class="btn btn-lg btn-primary" href="{% url 'fun:editar_puesto' pue.id %}">Editar</a>
 </div>
 <a class="btn btn-outline-primary" href="{% url 'fun:puesto' %}">Volver</a>
 {% endblock contenedor %}

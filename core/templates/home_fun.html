@@ -3,9 +3,11 @@
 {% block title %}{{titulo}}{% endblock title %}
 
 {% block contenedor %}
+<br>
 <a class="btn btn-outline-primary" href="{% url 'fun:agregar' %}">Agregar Persona</a>
-<a class="btn btn-outline-primary" href="{% url 'fun:agregar_puesto' %}">Agregar Puesto</a>
 <a class="btn btn-outline-primary" href="{% url 'fun:puesto' %}">Puestos Laborales</a>
+<br>
+
 <table class="table table-hover">
     <thead>
         <tr class="table-dark">
