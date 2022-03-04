@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block title %}{{titulo}}{% endblock title %}
+
+{% block contenedor %}
+<div class="contenedor d-grid gap-2">
+    <h3>Persona: {{ object.nombre }} {{ object.apellido }}</h3>
+    <h3>Genero: {{ object.genero }}</h3>
+    <h3>DNI: {{ object.dni }}</h3>
+    <h3>Edad: {{ object.edad }}</h3>
+    <h3>Cursos vigentes:</h3>
+    {% for lis in object.materia.all %}
+    <h4> -  {{ lis }} - Profe: {{ lis.descripcion }}</h4>
+    {% endfor %}
+    <td><a class="btn btn-lg btn-primary" href="{% url 'clases:editar' object.id %}">Editar</a></td>
+</div>
+<a class="btn btn-outline-primary" href="{% url 'clases:home' %}">Volver</a>
+{% endblock contenedor %}

@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block title %}Nuevo registro{% endblock title %}
+
+{% block contenedor %}
+<div class="contenedor">
+    <form method="post">{% csrf_token %}
+        <p>Estas seguro de eliminar a: "{{ object }}"?</p>
+        <input type="submit" value="Confirm">
+    </form>
+</div>
+{% endblock contenedor %}

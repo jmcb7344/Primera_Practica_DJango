@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'funciones',
+    'vista_Clases',
 ]
 
 MIDDLEWARE = [

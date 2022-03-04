@@ -16,8 +16,11 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from .views import inicio
+
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', inicio, name='inicio'),
-    path('fun/', include('funciones.urls', namespace='fun'))
+    path('fun/', include('funciones.urls', namespace='fun')),
+    path('clases', include('vista_Clases.urls', namespace='clases')),
 ]
