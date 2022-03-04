@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+
+{% block title %}{{titulo}}{% endblock title %}
+
+{% block contenedor %}
+<br>
+<a class="btn btn-outline-primary" href="{% url 'clases:nuevocurso' %}">Agregar Nuevo Curos</a>
+<br>
+
+<table class="table table-hover">
+    <thead>
+        <tr class="table-dark">
+            <th>Id</th>
+            <th>Curos</th>
+            <th>Descripcion</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for pers in curso %}
+        <tr>
+            <td>{{ pers.id }}</td>
+            <td>{{ pers.nombre }}</td>
+            <td>{{ pers.descripcion }}</td>
+            <td><a class="btn btn-outline-primary" href="{% url 'clases:editarCurso' pers.id %}">Editar</a></td>
+            <td><a class="btn btn-outline-primary" href="{% url 'fun:eliminar_puesto' pers.id %}">Eliminar</a></td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+<div class="contenedor">
+    <ul class="list-group">
+        <li class="list-group-item d-flex justify-content-between align-items-center">
+            <h4>Total de Cursos registrados:</h4>
+            <span class="badge bg-primary rounded-pill">{{ contar }}</span>
+        </li>
+    </ul>
+</div>
+<a class="btn btn-outline-primary me-2" href="{% url 'clases:home' %}">Volver</a>
+{% endblock contenedor %}
