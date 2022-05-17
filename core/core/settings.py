@@ -41,7 +41,10 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'funciones',
+<<<<<<< HEAD
     'vista_Clases',
+=======
+>>>>>>> 1132b57 (b)
 ]
 
 MIDDLEWARE = [

@@ -3,11 +3,14 @@
 {% block title %}{{titulo}}{% endblock title %}
 
 {% block contenedor %}
+<<<<<<< HEAD
 <br>
 <a class="btn btn-outline-primary" href="{% url 'fun:agregar' %}">Agregar Persona</a>
 <a class="btn btn-outline-primary" href="{% url 'fun:puesto' %}">Puestos Laborales</a>
 <br>
 
+=======
+>>>>>>> 1132b57 (b)
 <table class="table table-hover">
     <thead>
         <tr class="table-dark">
@@ -17,6 +20,7 @@
         </tr>
     </thead>
     <tbody>
+<<<<<<< HEAD
         {% for pers in personas %}
         <tr>
             <td>{{ pers.id }}</td>
@@ -42,4 +46,18 @@
     </ul>
 </div>
 <a class="btn btn-outline-primary me-2" href="{% url 'inicio' %}">Volver</a>
+=======
+        <tr>
+            {% for pers in personas %}
+            <td>{{ pers.id }}</td>
+            <td>{{ pers.nombre }} {{ pers.apellido }}</td>
+            <td>{{ pers.activo }}</td>
+            <a href="{% url 'fun:detalle' pers.id %}">detalle</a>
+            <a href="{% url 'fun:editar' pers.id %}">Editar</a>
+            <a href="{% url 'fun:eliminar' pers.id %}">Eliminar</a>
+            {% endfor %}
+        </tr>
+    </tbody>
+</table>
+>>>>>>> 1132b57 (b)
 {% endblock contenedor %}
