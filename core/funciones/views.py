@@ -1,16 +1,10 @@
-<<<<<<< HEAD
 from django.shortcuts import get_object_or_404, redirect, render
 from funciones import models, forms
-=======
-from django.shortcuts import render
-from funciones import models
->>>>>>> 1132b57 (b)
 
 # Create your views here.
 def home(request):
     context = {
         'titulo':'Paguina principal',
-<<<<<<< HEAD
         'personas': models.Persona.objects.order_by(),
         'contar': models.Persona.objects.count(),
         'activo':models.Persona.objects.filter(activo=True).count(),
@@ -79,17 +73,3 @@ def eliminar_puesto(request, id):
     if puesto:
         puesto.delete()
     return redirect('fun:puesto')
-=======
-        'personas': models.Persona.objects.all()
-    }
-    return render(request, 'home_fun.html', context)
-
-def detalle(request):
-    pass
-
-def editar(request):
-    pass
-
-def eliminar(request):
-    pass
->>>>>>> 1132b57 (b)

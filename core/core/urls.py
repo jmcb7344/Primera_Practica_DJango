@@ -15,7 +15,6 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-<<<<<<< HEAD
 from .views import inicio
 
 
@@ -24,10 +23,4 @@ urlpatterns = [
     path('', inicio, name='inicio'),
     path('fun/', include('funciones.urls', namespace='fun')),
     path('clases', include('vista_Clases.urls', namespace='clases')),
-=======
-
-urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('fun/', include('funciones.urls', namespace='fun'))
->>>>>>> 1132b57 (b)
 ]
